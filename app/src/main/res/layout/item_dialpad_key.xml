@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="72dp"
+    android:layout_height="72dp"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_dialpad_key"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvKeyNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-bold"
+        android:text="1"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/tvKeyLetters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.1"
+        android:text="ABC"
+        android:textColor="@color/colorTextTertiary"
+        android:textSize="10sp" />
+</LinearLayout>

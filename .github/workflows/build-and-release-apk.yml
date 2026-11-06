@@ -1,0 +1,73 @@
+name: Build & Release AutoRedial Pro APK
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build & Release APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Java JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Prepare APK Output
+        run: |
+          mkdir -p release-output
+          cp app/build/outputs/apk/debug/app-debug.apk release-output/AutoRedialPro-v1.0.0.apk
+          echo "APK successfully built at release-output/AutoRedialPro-v1.0.0.apk"
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AutoRedialPro-v1.0.0.apk
+          path: release-output/AutoRedialPro-v1.0.0.apk
+          retention-days: 30
+
+      - name: Publish Release & Upload APK
+        uses: softprops/action-gh-release@v2
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        with:
+          tag_name: v1.0.0
+          name: "AutoRedial Pro v1.0.0 (Official APK)"
+          body: |
+            ## 📱 AutoRedial Pro v1.0.0 - Android APK
+
+            Download the official **AutoRedial Pro** application below!
+
+            ### 🚀 Features Included:
+            - **Millisecond VAD Audio Engine**: Instantly disconnects robot IVR prompts or busy tones in under 35ms.
+            - **Ringing Cadence Discrimination**: 440Hz/480Hz dual-frequency filter ensures standard ringing calls stay connected.
+            - **Smart Stop Condition**: Automatically stops the redial loop as soon as the recipient picks up.
+            - **In-App Dialpad with DTMF Sounds**: Dial directly inside the app with realistic telephone tones.
+            - **Auto-Speakerphone**: Automatically switches to hands-free speaker on ring/pickup.
+            - **Redial Stream Muting**: Silences loud clicking/beeping sounds during high-speed redial loops.
+            - **0–2000ms Delay Controller**: Fine-tune delay between attempts.
+
+            ### 📲 Installation:
+            1. Download **`AutoRedialPro-v1.0.0.apk`** below.
+            2. Open on your Android device and tap **Install**.
+          files: release-output/AutoRedialPro-v1.0.0.apk
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AutoRedial Pro</string>
+    <string name="hint_phone_number">Enter or pick phone number</string>
+    <string name="title_saved_hotlines">SAVED HOTLINES / DOCTORS</string>
+    <string name="state_idle">IDLE</string>
+    <string name="detail_ready_to_call">Ready to begin millisecond VAD auto-redial</string>
+    <string name="label_vad_level">AUDIO ENERGY</string>
+    <string name="stat_attempts">ATTEMPTS</string>
+    <string name="stat_cut_speed">CUT SPEED</string>
+    <string name="stat_ring_filter">RING CADENCE</string>
+    <string name="section_audio_controls">AUDIO &amp; SPEAKER CONTROLS</string>
+    <string name="label_auto_speaker">Auto Speaker on Ringing</string>
+    <string name="desc_auto_speaker">Hands-free speakerphone on ring/pickup</string>
+    <string name="label_mute_redials">Mute Rapid Redial Tones</string>
+    <string name="desc_mute_redials">Silences ear-piercing robot clicks during loops</string>
+    <string name="label_redial_delay">Loop Delay Between Redials (0 - 2000 ms)</string>
+    <string name="btn_start_auto_redial">START AUTO-REDIAL</string>
+    <string name="btn_stop_redial">STOP REDIAL</string>
+</resources>

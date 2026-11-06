@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2563EB</color>
+    <color name="colorPrimaryVariant">#1D4ED8</color>
+    <color name="colorAccentCyan">#06B6D4</color>
+    <color name="colorBackground">#0B0F19</color>
+    <color name="colorSurfaceCard">#111827</color>
+    <color name="colorBorder">#1F2937</color>
+    <color name="colorTrack">#1F2937</color>
+    <color name="colorTextPrimary">#F9FAFB</color>
+    <color name="colorTextSecondary">#9CA3AF</color>
+    <color name="colorTextTertiary">#6B7280</color>
+    <color name="colorSuccess">#10B981</color>
+    <color name="colorWarning">#F59E0B</color>
+    <color name="colorDestructive">#EF4444</color>
+</resources>
