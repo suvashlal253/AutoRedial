@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.AutoRedialPro" parent="Theme.Material3.Dark.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</color>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="android:statusBarColor">@color/colorBackground</item>
         <item name="android:navigationBarColor">@color/colorBackground</item>
     </style>
@@ -20,6 +20,6 @@
     </style>
 
     <style name="Theme_AutoRedial_Dialog" parent="Theme.Material3.Dark.Dialog.Alert">
-        <item name="colorPrimary">@color/colorPrimary</color>
+        <item name="colorPrimary">@color/colorPrimary</item>
     </style>
 </resources>
